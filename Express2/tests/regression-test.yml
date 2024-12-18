@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:81"
+  phases:
+    - duration: 1
+      arrivalRate: 1
+  processor: "./helper4.js"
+
+scenarios:
+  - name: "POST CSV File"
+    flow:
+      - post:
+          url: "/api/regression?xColumnIndex=1&yColumnIndex=0"
+          beforeRequest: "addMultipartFormData"
+          headers:
+            Content-Type: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW"

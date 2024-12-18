@@ -1,0 +1,10 @@
+config:
+  target: "http://localhost:81" # Adres twojej aplikacji
+  phases:
+    - duration: 5 # Czas trwania testu w sekundach
+      arrivalRate: 2 # Liczba żądań na sekundę
+
+scenarios:
+  - flow:
+      - get:
+          url: "/" # Ścieżka do testowanego endpointu

@@ -1,0 +1,13 @@
+config:
+  target: "http://localhost:81"
+  phases:
+    - duration: 5
+      arrivalRate: 2
+  processor: "./helper2.js"
+
+scenarios:
+  - name: "POST JSON File"
+    flow:
+      - post:
+          url: "/api/predict"
+          beforeRequest: "loadJsonFile"
